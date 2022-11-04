@@ -27,7 +27,7 @@
 #include <wiringPi.h>
 
 
-#define	LED	          40
+#define	LED	          15
 
 int main (void)
 {
@@ -41,9 +41,9 @@ int main (void)
 
 	for (;;) {
 		digitalWrite(LED, HIGH);	// On
-		delay(100);		            // mS
+		delay(10);		            // mS
 		digitalWrite(LED, LOW);	// Off
-		delay(100);
+		delay(50);
 	}
 	return 0;
 }

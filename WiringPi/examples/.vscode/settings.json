@@ -31,7 +31,12 @@
   "makefile.launchConfigurations": [
     {
       "cwd": "/root/orangepi_i96_gpio/WiringPi/examples",
-      "binaryPath": "/root/orangepi_i96_gpio/WiringPi/examples/lcd",
+      "binaryPath": "/root/orangepi_i96_gpio/WiringPi/examples/",
+      "binaryArgs": []
+    },
+    {
+      "cwd": "/root/orangepi_i96_gpio/WiringPi/examples",
+      "binaryPath": "/root/orangepi_i96_gpio/WiringPi/examples/blink",
       "binaryArgs": []
     }
   ]

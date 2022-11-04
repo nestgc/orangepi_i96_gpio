@@ -226,7 +226,7 @@ int main (int argc, char *argv[])
   }
 
   lcdPosition (lcdHandle, 0, 0) ; lcdPuts (lcdHandle, "Nestor G") ;
-  lcdPosition (lcdHandle, 0, 1) ; lcdPuts (lcdHandle, "  wiringpi.com  ") ;
+  lcdPosition (lcdHandle, 0, 1) ; lcdPuts (lcdHandle, "  casita  ") ;
 
   waitForEnter () ;
 
