@@ -248,7 +248,7 @@ int main (int argc, char *argv[])
     }
   }
 
-  waitForEnter () ;
+  waitForEnter (1) ;
 
   lcdCharDef  (lcdHandle, 2, newChar) ;
 
