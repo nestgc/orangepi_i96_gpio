@@ -31,7 +31,7 @@
 
 int main (void)
 {
-	printf ("OrangePi Pi ddblink\n");
+	printf ("OrangePi Pi blink\n");
 
 	/* Initialize and setting WiringPi */
 	wiringPiSetup();
