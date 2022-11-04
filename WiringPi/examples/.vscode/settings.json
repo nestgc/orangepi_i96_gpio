@@ -27,5 +27,12 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
+  ],
+  "makefile.launchConfigurations": [
+    {
+      "cwd": "/root/orangepi_i96_gpio/WiringPi/examples",
+      "binaryPath": "/root/orangepi_i96_gpio/WiringPi/examples/lcd",
+      "binaryArgs": []
+    }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -9,7 +10,8 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/root/orangepi_i96_gpio/WiringPi/examples",
-      "program": "/root/orangepi_i96_gpio/WiringPi/examples/build/Debug/outDebug",
+      "program": "${workspaceRoot}/lcd",
+      //"program": "${workspaceFolder}/${fileBasename}",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
