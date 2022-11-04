@@ -41,9 +41,9 @@ int main (void)
 
 	for (;;) {
 		digitalWrite(LED, HIGH);	// On
-		delay(5);		            // mS
+		delay(100);		            // mS
 		digitalWrite(LED, LOW);	// Off
-		delay(5);
+		delay(100);
 	}
 	return 0;
 }
