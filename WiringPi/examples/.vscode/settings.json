@@ -39,5 +39,6 @@
       "binaryPath": "/root/orangepi_i96_gpio/WiringPi/examples/blink",
       "binaryArgs": []
     }
-  ]
+  ],
+  "files.autoSave": "onWindowChange"
 }
