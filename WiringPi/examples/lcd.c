@@ -205,6 +205,17 @@ int main (int argc, char *argv[])
 
   wiringPiSetup () ;
 
+#define LCD_RS  20               //Register select pin
+#define LCD_E   22               //Enable Pin
+#define LCD_D0  0               //Data pin D0
+#define LCD_D1  0               //Data pin D1
+#define LCD_D2  0               //Data pin D2
+#define LCD_D3  0               //Data pin D3
+#define LCD_D4  30               //Data pin D4
+#define LCD_D5  29               //Data pin D5
+#define LCD_D6  28               //Data pin D6
+#define LCD_D7  27               //Data pin D7
+
   if (bits == 4){
 	//pinMode(27,  OUTPUT);
 	//pinMode(28,  OUTPUT);
@@ -213,11 +224,13 @@ int main (int argc, char *argv[])
 	//pinMode(22,  OUTPUT);
 	//pinMode(20,  OUTPUT);
 	//pinMode(26, OUTPUT);
+  //USE WIRINGPI PIN NUMBERS
     //lcdHandle = lcdInit (rows, cols, 4, 11,10, 4,5,6,7,0,0,0,0) ;
-    lcdHandle = lcdInit (rows, cols, 4, 20,22, 30,29,28,27,0,0,0,0) ;
+    //lcdHandle = lcdInit (rows, cols, 4, 20,22, 30,29,28,27,0,0,0,0) ;
+    lcdHandle = lcdInit (rows, cols, 4, LCD_RS, LCD_E, LCD_D4, LCD_D5, LCD_D6, LCD_D7, 0, 0, 0, 0);
    }
    else
-    lcdHandle = lcdInit (rows, cols, 8, 11, 10, 0,1,2,3,4,5,6,7) ;
+    lcdHandle = lcdInit (rows, cols, 8, LCD_RS, LCD_E, LCD_D0, LCD_D1, LCD_D2, LCD_D3, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 
   if (lcdHandle < 0)
   {
