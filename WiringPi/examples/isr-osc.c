@@ -53,8 +53,8 @@
 // What GPIO input are we using?
 //	This is a wiringPi pin number
 
-#define	OUT_PIN		0
-#define	IN_PIN		1
+#define	OUT_PIN		15
+#define	IN_PIN		56
 
 // globalCounter:
 //	Global variable to count interrupts
@@ -85,6 +85,7 @@ int main (void)
 {
   int myCounter   = 0 ;
   int lastCounter = 0 ;
+wiringPiSetup () ;
 
   if (wiringPiSetup () < 0)
   {
@@ -95,7 +96,8 @@ int main (void)
   pinMode (OUT_PIN, OUTPUT) ;
   pinMode (IN_PIN,  INPUT) ;
 
-  if (wiringPiISR (IN_PIN, INT_EDGE_FALLING, &myInterrupt) < 0)
+wiringPiISR (IN_PIN, INT_EDGE_FALLING, myInterrupt);
+  if (wiringPiISR (IN_PIN, INT_EDGE_FALLING, myInterrupt) < 0)
   {
     fprintf (stderr, "Unable to setup ISR: %s\n", strerror (errno)) ;
     return 1 ;

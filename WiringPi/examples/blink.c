@@ -25,12 +25,24 @@
 
 #include <stdio.h>
 #include <wiringPi.h>
+#include <signal.h>
 
+int blink = 1;
 
 #define	LED	          15
 
+// limpiar la salida antes de salir
+void cleanup(int signo) {
+	blink = 0;
+	printf ("limpieza\n");
+}
+
 int main (void)
 {
+	signal(SIGINT, cleanup);
+	signal(SIGTERM, cleanup);
+	signal(SIGHUP, cleanup);
+
 	printf ("OrangePi Pi blink\n");
 
 	/* Initialize and setting WiringPi */
@@ -39,11 +51,13 @@ int main (void)
 	/* Configure GPIO mode */
 	pinMode (LED, OUTPUT);
 
-	for (;;) {
+	while (blink) {
 		digitalWrite(LED, HIGH);	// On
-		delay(10);		            // mS
+		delay(100);		            // mS
 		digitalWrite(LED, LOW);	// Off
 		delay(50);
 	}
+
+	digitalWrite(LED, LOW);
 	return 0;
 }

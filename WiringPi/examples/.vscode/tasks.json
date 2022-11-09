@@ -10,7 +10,7 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-I/usr/local/include",
+                "-I/usr/local/include;/usr/include/",
                 "-lwiringPi",
                 "-lwiringPiDev",
                 "-lpthread",
@@ -22,16 +22,38 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "detail": "Tarea generada por el depurador."
         },
         {
             "type": "cppbuild",
             "label": "C/C++: gcc compilar archivo activo",
             "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I/usr/local/include;/usr/include/",
+                "-lwiringPi",
+                "-lwiringPiDev",
+                "-lpthread",
+                "-lm"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Tarea generada por el depurador."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc-10 compilar archivo activo",
+            "command": "/usr/bin/gcc-10",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -50,7 +72,10 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "detail": "Tarea generada por el depurador."
         }
     ],
