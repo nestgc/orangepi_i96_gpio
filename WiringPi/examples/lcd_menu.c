@@ -8,6 +8,8 @@
 #include <string.h>
 #include <time.h>
 #include <lcd.h>
+#include <pthread.h>
+
 
 #ifndef	TRUE
 #  define	TRUE	(1==1)
@@ -98,7 +100,7 @@ int main (int argc, char *argv[])
 
   wiringPiSetup () ;
 
-pinMode(LCD_OUT, OUTPUT);		// Configure GPIO0 as an output
+pinMode(LED_OUT, OUTPUT);		// Configure GPIO0 as an output
 pinMode(ARR_IN, INPUT);		// Configure GPIO1 as an input
 pinMode(ABA_IN, INPUT);		// Configure GPIO1 as an input
 pinMode(ENTER_IN, INPUT);		// Configure GPIO1 as an input
